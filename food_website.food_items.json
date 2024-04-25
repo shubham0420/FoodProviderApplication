@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "6600df6f69eb3fe28d9196d6"
+  },
+  "name": "Chilli Parotta",
+  "price": "120",
+  "description": "Parotta fried with red flakes and more spicey south indian flavourful parotta madurai style",
+  "image_url": "https://thanjaigroup.com/thanjairestaurant/wp-content/uploads/2021/08/Kothu-Parottha-Article-1.jpg",
+  "stripe_url": "price_1Oy392SDXpmGBiOqeKFONs4q"
+},
+{
+  "_id": {
+    "$oid": "65fffaed23b348fa48e31ce3"
+  },
+  "name": "Chicken 65",
+  "price": "120",
+  "description": "Chicken 65 is a spicy, deep-fried chicken dish originating from Hotel Buhari, Chennai, India.",
+  "image_url": "https://paattiskitchen.com/wp-content/uploads/2023/05/kmc_20230501_131310-800x530.jpg?crop=1",
+  "stripe_url": "price_1OxniDSDXpmGBiOqvnha4wkP"
+},
+{
+  "_id": {
+    "$oid": "65fffc6823b348fa48e31ce4"
+  },
+  "name": "Chicken Briyani",
+  "price": "150",
+  "description": "madras style chicken briyani pure halal",
+  "image_url": "https://vismaifood.com/storage/app/uploads/public/914/f47/fa9/thumb__1200_0_0_0_auto.jpg",
+  "stripe_url": "price_1OxloGSDXpmGBiOqtOwvOaIV"
+},
+{
+  "_id": {
+    "$oid": "65fffff223b348fa48e31ce5"
+  },
+  "name": "Mutton Briyani",
+  "price": "220",
+  "description": "Mutton Biryani: Mutton biryani is known for its rich and intense flavor.\n",
+  "image_url": "https://e0.pxfuel.com/wallpapers/902/326/desktop-wallpaper-forest-park-ki-mutton-dum-biryani-forest-park-brahmapuri-taste-of-city-mutton-biryani.jpg",
+  "stripe_url": "price_1OxoGXSDXpmGBiOq3fK8sMNG"
+},
+{
+  "_id": {
+    "$oid": "66005a1cf8cd4e7b31e9a177"
+  },
+  "name": "Grill Chicken",
+  "price": "320",
+  "description": "Tasty Grill Chicken with less oil, Yes your right fat less",
+  "image_url": "https://hips.hearstapps.com/hmg-prod/images/grilled-chicken-horizontal-1532030541.jpg?crop=0.8890666666666666xw:1xh;center,top&resize=1200:*",
+  "stripe_url": "price_1OxuGMSDXpmGBiOq59zdDmV6"
+},
+{
+  "_id": {
+    "$oid": "6601174e777b5c636f0a7346"
+  },
+  "name": "Egg kottu parotta",
+  "price": "120",
+  "description": "kottu porotta is made of eggs and healthy",
+  "image_url": "https://i.pinimg.com/originals/6f/63/6a/6f636ae409831644fe9ca67757c73c57.jpg",
+  "stripe_url": "price_1Oy6q4SDXpmGBiOqZmObfbjj"
+}]

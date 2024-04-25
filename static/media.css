@@ -1,0 +1,136 @@
+/* nav bar */
+@media all and (max-width:686px){
+    nav{
+        flex-direction: column;
+    }
+
+    nav li{
+        display:block;
+        padding:10px 0;
+    }
+    nav ul{
+        text-align: center;
+        padding:0;
+        display:none;
+    }
+
+    .logo{
+        align-self:flex-start;
+        margin:10px 0px 0px 30px;
+    }
+
+    .menu{
+        display:block;
+        position:absolute;
+        right:20px;
+        top:25px;
+    }
+
+    .showmenu{
+        display:block;
+    }
+    
+}
+
+/* our best combo */
+
+@media all and (max-width:1132px) {
+    .combos {
+        flex-direction: column; /* Stack combos vertically for smaller screens */
+      }
+    
+      .combo1,
+      .combo2,
+      .combo3 {
+        margin-bottom: 20px; /* Add spacing between combos */
+      }
+}
+
+/* about food */
+
+@media all and (max-width:1126px) {
+    .cover {
+        flex-direction: column;
+    }
+    .briyani {
+        width: 90%; /* Adjust the width of the image */
+        margin-bottom: 20px; /* Add margin for spacing between image and text */
+      }
+}
+
+/* hero-section */
+
+@media all and (max-width:520px) {
+    .cover {
+        flex-direction: column;
+    }
+    .briyani {
+        width: 90%; /* Adjust the width of the image */
+        margin-bottom: 20px; /* Add margin for spacing between image and text */
+      }
+      .order {
+        margin-top: 20px;
+      }
+}
+
+/* footer */
+
+@media only screen and (min-width: 600px) {
+    .footer {
+      flex-direction: row; /* Revert to horizontal layout for larger screens */
+      justify-content: space-around;
+      align-items: center;
+    }
+  }
+  
+  /* Styling for all footer elements */
+  .footer1 h1,
+  .footer2 h2,
+  .footer3 h2,
+  .credit p {
+    color: white;
+    margin: 10px 0; /* Add space between elements */
+  }
+  
+  .footer2 ul li,
+  .footer3 ul li {
+    list-style-type: none;
+    margin-top: 10px;
+  }
+  
+  a {
+    text-decoration: none;
+    color: white;
+  }
+
+/* Adjustments for screens wider than 990px */
+@media only screen and (min-width: 990px) {
+    .footer {
+      flex-direction: row;
+      justify-content: space-between; /* Spread items across the width */
+      align-items: center;
+    }
+  
+    .footer2,
+    .footer3 {
+     
+      margin-right: 10px; /* Add some spacing between footer2 and footer3 */
+    }
+  
+    .credit {
+      order: 3; /* Display the credit section as the last item */
+      margin-top: 20px; /* Add margin to separate it from the rest */
+    }
+  }
+
+  @media only screen and (max-width: 964px) {
+    .contact-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .map iframe{
+      width: 100%;
+      min-height: 380px;
+  }
+
+  }
+  

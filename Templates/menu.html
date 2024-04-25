@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Menu</title>
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='menu.css') }}">
+    <!-- <link rel="stylesheet" href="/static/menu.css"> -->
+</head>
+<body>
+<div class="menu">
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="flash-messages">
+        {% for category, message in messages %}
+        <div class="flash-message {{ category }}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+    
+    <div class="heading">
+        <h1>SS BRIYANI</h1>
+        <h3>&mdash; MENU &mdash;</h3>
+        <p><a href="/home">BACK</a></p>
+        <div fa fa-shopping-cart><a href="/cart" class="fa fa-shopping-cart" style="font-size:32px;color:#fff">Cart</a></div>
+    </div>
+    {% for food_item in food_items %}
+    <div class="food-items">
+        <img src="{{ food_item.image_url }}" alt="{{ food_item.name }}" />
+        <div class="details">
+            <div class="details-sub">
+                <h5>{{ food_item.name }}</h5>
+                <h5 class="price">₹{{ food_item.price }}</h5>
+            </div>
+            <p>{{ food_item.description }}</p>
+            <!-- Inside the loop that renders food items -->
+            <button class="btn-menu" onclick="addToCart('{{ food_item._id }}', '{{ food_item.name }}', '{{ food_item.price }}','{{ food_item.image_url }}','{{ food_item.stripe_url }}')">
+                Add To Cart
+            </button>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<script src="/static/js/menu.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,370 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins: wght@400;500;600;700&display=swap");
+
+/* main color */
+crimson
+/* secondary color */
+#ffc9c9
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+  background: #fff5f5;
+  background-image: url(/static/images/wooden-background.jpg);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+/* navbar */
+nav{
+  font-size: 22px;
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content: space-around;
+  color:white;
+  padding: -10px;
+}
+
+nav li{
+  display:inline-block;
+  margin:0 8px;
+  
+}
+
+p.a{
+  text-decoration: none;
+  color: white;
+}
+
+.logo{
+  font-size:36px;
+  font-weight: bolder;
+}
+
+.menu-line{
+  height:3px;
+  width:20px;
+  background-color:white;
+  margin-bottom: 3px;
+}
+
+.menu{
+  cursor:pointer;
+  display:none;   
+}
+
+/* Sticky navbar */
+#navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: crimson;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.menu-line{
+  height: 3px;
+  width: 20px;
+  background-color: white;
+  margin-bottom: 3px;
+}
+
+.navborder::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  display: block;
+  background-color: white;
+  transition: width 0, 3s ease;
+}
+.navborder:hover::after {
+  width: 100%;
+}
+
+/* hero section */
+
+/* About us */
+
+.container2 {
+  margin: 30px 20px;
+  border: 2px solid crimson;
+  padding: 20px; /* Add padding for better spacing */
+  background-color: crimson;
+}
+
+.cover {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Vertically center the items */
+}
+
+.briyani {
+  width: 550px; /* Adjust the width of the image */
+  margin-right: 20px; /* Add margin for spacing between image and text */
+}
+
+.Aboutmyfood {
+  flex: 1; /* Take up remaining space */
+  align-self: flex-start;
+  font-size: 30px;
+}
+
+#aboutus h1 {
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  padding-bottom: 10px;
+ 
+}
+
+.Aboutmyfood p{
+  font-size: 22px;
+}
+
+/* image gallery */
+.img-gallery{
+  width: 80%;
+  margin: 100px auto 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 30px;
+}
+
+.img-gallery img{
+  width: 100%;
+  cursor: pointer;
+}
+
+.img-gallery img:hover{
+  transform: scale(0.8) rotate(-15deg);
+  border-radius: 20px;
+  box-shadow: 0 32px 75px rgba(68, 77, 136, 0.2);
+}
+
+.full-img{
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.full-img img{
+  width: 90%;
+  max-width: 500px;
+}
+
+.full-img span{
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  font-size: 30px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* testimonials */
+
+.container3 {
+  margin: auto;
+  padding: 0 15px;
+  margin: 30px 20px;
+  border: 2px solid crimson;
+  border-radius: 20px;
+  background-color: crimson;
+
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+.section-header .title-test {
+  margin-top: 20px;
+  font-size: 35px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.testimonials {
+  padding: 100px 0;
+}
+
+.testimonials-item {
+  background-color: hsl(0, 0%, 100%);
+  padding: 30px;
+  border-radius: 30px;
+}
+.testimonials-item .info {
+  display: flex;
+  align-items: center;
+}
+.testimonials-item img {
+  max-width: 80px;
+  border-radius: 50%;
+  margin-right: 20px;
+  vertical-align: middle;
+}
+
+.testimonials-item .name {
+  font-size: 24px;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: hsl(0, 0%, 0%);
+  line-height: 1.2;
+}
+.testimonials-item .job {
+  text-transform: capitalize;
+  color: hsl(0, 0%, 40%);
+}
+.testimonials-item p {
+  margin-top: 20px;
+  color: hsl(0, 0%, 40%);
+}
+.testimonials-item .rating {
+  margin-top: 15px;
+  font-size: 14px;
+  color: hsl(36, 88%, 66%);
+}
+
+.testimonials .swiper-pagination{
+  position: relative;
+  margin-top: 40px;
+  bottom: auto;
+  }
+  .testimonials .swiper-pagination-bullet{
+  height: 12px;
+  width:12px;
+  background-color: hsl(0, 0%, 100%);
+  }
+
+
+/* contact us */
+#contact-container h1{
+  color: crimson;
+  font-size: 35px;
+  margin-top: 20px;
+}
+#contact-container{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  place-items: center;
+  color: #fff;
+  background: transparent;
+  margin: 30px 30px;
+}
+.contact-container {
+  max-width: 960px;
+  margin: auto;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  background: crimson;
+  box-shadow: 0 0 1rem hsla(0 0 0 / 16%);
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.form-container {
+  padding: 20px;
+}
+
+.form-container h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.contact-form {
+  display: grid;
+  row-gap: 1rem;
+}
+
+.contact-form input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #fff;
+  padding: 10px;
+  font-size: 0.9rem;
+  color: #000;
+  border-radius: 0.4rem;
+}
+
+.contact-form textarea {
+  resize: none;
+  height: 200px;
+}
+
+.contact-form .send-button {
+  border: none;
+  outline: none;
+  background: #fff;
+  font-size: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #000;
+}
+
+.contact-form .send-button:hover {
+  background: #ececec;
+  transition: 0.3s all linear;
+}
+
+.map iframe{
+    width: 100%;
+    min-height: 100%;
+
+}
+
+
+/* footer */
+.footer {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically on smaller screens */
+  padding: 20px; /* Decrease padding for smaller screens */
+  background-color: crimson;
+  justify-content: space-around;
+
+}
+.footer1 h1,
+.footer2 h2,
+.footer3 h2,
+.credit p {
+  color: white;
+}
+.footer2 ul li ,
+.footer3 ul li  {
+  margin-top: 20px;
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a{
+  text-decoration: none;
+  color: white;
+}
+
+

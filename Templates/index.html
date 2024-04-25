@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MYFOOD</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='carousel.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='media.css') }}"
+    />
+    <link rel="stylesheet" href="/static/styles.css" />
+    <link rel="stylesheet" href="/static/media.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <!-- nav section -->
+    <nav id="navbar">
+      <div class="logo">
+        <a href="">SS BIRYANI</a>
+      </div>
+      <ul>
+        <li><a href="#hero-section" class="navborder">HOME</a></li>
+        <li><a href="#aboutus" class="navborder">ABOUT</a></li>
+        <li><a href="/menu" class="navborder">FOOD</a></li>
+        <li><a href="#contact-container" class="navborder">CONTACT</a></li>
+        <li><a href="/blog" class="navborder">BLOG</a></li>
+        {% if session %}
+        <li><a href="/user/signout" class="navborder">LOGOUT</a></li>
+        <li>
+          <a href="/signin" class="navborder"
+            >HI {{ session['user']['name']}} <i class="fas fa-smile"></i
+          ></a>
+        </li>
+        {% else %}
+        <li><a href="/signin" class="navborder">LOGIN</a></li>
+        {% endif %}
+      </ul>
+      <div class="menu">
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+        <div class="menu-line"></div>
+      </div>
+    </nav>
+
+    hero section
+    <section id="hero-section">
+      <div class="carousel">
+        <div class="list">
+          <div class="item">
+            <img src="/static/images/img1.jpg" />
+            <div class="content">
+              <div class="author">Biryani Experts</div>
+              <div class="title">Authentic Biryani Recipes</div>
+              <div class="topic">Biryani</div>
+              <div class="des">
+                Explore the world of Biryani with our authentic recipes that
+                will tantalize your taste buds. From traditional to fusion,
+                we've got it all covered!
+              </div>
+              <div class="buttons">
+                <button class="order"><a href="/menu">Order Now</a></button>
+                <button>SUBSCRIBE</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/img2.jpg" />
+            <div class="content">
+              <div class="author">Biryani Lovers</div>
+              <div class="title">Spicy Chicken Biryani</div>
+              <div class="topic">Biryani</div>
+              <div class="des">
+                Indulge in the fiery flavors of our Spicy Chicken Biryani, a
+                mouthwatering delight for spice enthusiasts.
+              </div>
+              <div class="buttons">
+                <button class="order"><a href="/menu">Order Now</a></button>
+                <button>SUBSCRIBE</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/img3.jpg" />
+            <div class="content">
+              <div class="author">Biryani Masters</div>
+              <div class="title">Vegetable Biryani Feast</div>
+              <div class="topic">Biryani</div>
+              <div class="des">
+                Delight in the rich flavors of our Vegetable Biryani Feast, a
+                wholesome option for vegetarians and vegans alike.
+              </div>
+              <div class="buttons">
+                <button class="order"><a href="/menu">Order Now</a></button>
+                <button>SUBSCRIBE</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="thumbnail">
+          <div class="item">
+            <img src="/static/images/img1.jpg" />
+            <div class="content">
+              <div class="title">Classic Biryani</div>
+              <div class="description">
+                A timeless favorite with aromatic spices and tender meat,
+                perfect for any occasion.
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/img2.jpg" />
+            <div class="content">
+              <div class="title">Spicy Chicken Biryani</div>
+              <div class="description">
+                Prepare your taste buds for an explosion of spice with our Spicy
+                Chicken Biryani.
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <img src="/static/images/img3.jpg" />
+            <div class="content">
+              <div class="title">Vegetable Biryani Feast</div>
+              <div class="description">
+                A medley of fresh vegetables and fragrant spices come together
+                in our Vegetable Biryani Feast for a satisfying meal.
+              </div>
+            </div>
+          </div>
+
+          <div class="item">
+            <img src="/static/images/img4.jpg" />
+            <div class="content">
+              <div class="title">Royal Biryani</div>
+              <div class="description">
+                Experience the regal flavors of our Royal Biryani, fit for kings
+                and queens.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="arrows">
+          <button id="prev"><</button>
+          <button id="next">></button>
+        </div>
+
+        <div class="time"></div>
+      </div>
+    </section>
+
+    <!-- About us -->
+    <section id="aboutus">
+      <div class="container2">
+        <h1>About Our Food</h1>
+        <div class="cover">
+          <img src="/static/images/Briyani.webp" class="briyani" />
+          <div class="Aboutmyfood">
+            <p>
+              For over 40 years, we've been preparing biryani with our secret
+              recipe passed down through generations. All spices and herbs are
+              handpicked, natural, with no added preservatives. Join us at our
+              biryani haven and embark on a culinary adventure like no other.
+              Whether you're dining in with friends and family or opting for a
+              takeaway treat, let us whisk you away on a journey of taste,
+              tradition, and pure gastronomic bliss.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- image gallery -->
+    <section>
+      <div class="full-img" id="fullImgBox">
+        <img src="/static/images/img1.jpg" id="fullImg" />
+        <span onclick="closeFullImg()">X</span>
+      </div>
+      <div class="img-gallery">
+        <img src="/static/images/01.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/02.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/03.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/04.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/05.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/06.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/07.jpg" onclick="openFullImg(this.src)" />
+        <img src="/static/images/08.jpg" onclick="openFullImg(this.src)" />
+      </div>
+    </section>
+
+    <!-- price list -->
+    <section class="testimonials">
+      <div class="container3">
+        <div class="section-header">
+          <h2 class="title-test">what our Customers say</h2>
+        </div>
+        <div class="testimonials-content">
+          <div class="swiper testimonials-slider js-testimonials-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/20.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">john Augstin</h3>
+                    <span class="job">Food Youtuber</span>
+                  </div>
+                </div>
+                <p>
+                  Absolutely divine! The aroma alone was enough to transport me
+                  to a culinary paradise. Each bite of the biryani at this
+                  restaurant was a symphony of flavors that left me craving for
+                  more. Definitely a must-visit for any biryani enthusiast!
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/22.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">Balaji D</h3>
+                    <span class="job">web developer</span>
+                  </div>
+                </div>
+                <p>
+                  "I've tried biryani at numerous places, but nothing comes
+                  close to the perfection of the biryani served here. The tender
+                  meat, fragrant rice, and expertly blended spices create a
+                  harmonious explosion of taste in every mouthful. It's a
+                  culinary masterpiece that keeps me coming back for more!"
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/23.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">Diwakar P</h3>
+                    <span class="job">Electrician</span>
+                  </div>
+                </div>
+                <p>
+                  "I'm blown away by the authenticity and richness of flavors in
+                  the biryani from this restaurant. It's evident that the chefs
+                  here take great pride in their craft, as each component of the
+                  dish is carefully prepared to perfection. A true gem for
+                  anyone seeking an authentic biryani experience."
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/24.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">Aisha G</h3>
+                    <span class="job">Journalist</span>
+                  </div>
+                </div>
+                <p>
+                  "From the moment I walked in, I knew I was in for a treat. The
+                  inviting aroma of spices filled the air, and the biryani did
+                  not disappoint. The generous portions and impeccable
+                  presentation were surpassed only by the incredible taste. It's
+                  safe to say I've found my new favorite biryani spot!"
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/men/26.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">vj das</h3>
+                    <span class="job">Ordinary Man</span>
+                  </div>
+                </div>
+                <p>
+                  "As a biryani aficionado, I have high standards when it comes
+                  to this beloved dish. However, this restaurant exceeded all my
+                  expectations. The biryani here is a work of art, with each
+                  grain of rice infused with flavor and each bite bursting with
+                  a delightful medley of spices. A true testament to the chef's
+                  mastery of their craft!"
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+              <div class="swiper-slide testimonials-item">
+                <div class="info">
+                  <img
+                    src="https://randomuser.me/api/portraits/women/27.jpg"
+                    alt="img"
+                  />
+                  <div class="text-box">
+                    <h3 class="name">Darshini V</h3>
+                    <span class="job">backend developer</span>
+                  </div>
+                </div>
+                <p>
+                  "I recently had the pleasure of dining at this biryani
+                  restaurant, and I must say, it was a gastronomic delight! The
+                  biryani was cooked to perfection, with the meat incredibly
+                  tender and the rice flawlessly seasoned. It's rare to find
+                  such authenticity and quality in every aspect of a dish, but
+                  this restaurant delivers it effortlessly."
+                </p>
+                <div class="rating">
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                  <i class="fa fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-pagination js-testimonials-pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- contact us -->
+    <section id="contact-container">
+      <h1>For Bulk Orders & Party Orders</h1>
+      <!-- Contact Container -->
+      <div class="contact-container">
+        <!-- Form -->
+        <div class="form-container">
+          <h3>Message Us</h3>
+          <form
+            action="https://formspree.io/f/xqkrdwqv"
+            class="contact-form"
+            method="POST"
+          >
+            <input
+              type="text"
+              id="name"
+              placeholder="Your Name"
+              name="name"
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Enter Your Email..."
+              required
+            />
+            <input
+              type="tel"
+              name="tel"
+              id="mobile"
+              placeholder="Enter Your Mobile no..."
+              required
+            />
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="Write Message Here..."
+              required
+            ></textarea>
+            <input type="submit" class="send-button" />
+          </form>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124361.03003141165!2d80.22589425121303!3d13.081293902300157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sss%20hyderabad%20biryani!5e0!3m2!1sen!2sin!4v1711325048876!5m2!1sen!2sin"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer1"><h1>SS Biryani</h1></div>
+      <div class="footer2">
+        <h2>Services</h2>
+        <ul>
+          <li><a href="/register">Sign up</a></li>
+          <li><a href="/login">login</a></li>
+          <li><a href="/menu">Order Food</a></li>
+          <li><a href="/home">Affliate</a></li>
+        </ul>
+      </div>
+      <div class="footer3">
+        <h2>Our Pages</h2>
+        <ul>
+          <li><a href="/blog">About us</a></li>
+          <li><a href="#contact-us">Contact us</a></li>
+          <li><a href="/">Policy</a></li>
+          <li><a href="/">Disclaimier</a></li>
+        </ul>
+      </div>
+      <div class="credit">
+        <p>All Copyrights 2024 SS Biryani all rights reserved</p>
+      </div>
+    </div>
+    <div id="session-data" data-loggedin="{{ loggedin }}"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script src="{{ url_for('static', filename='carousel.js') }}"></script>
+    <!-- <script src="/static/script.js"></script> -->
+  </body>
+</html>

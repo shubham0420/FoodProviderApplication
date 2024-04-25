@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cart</title>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='cart.css') }}">
+</head>
+<body>
+    <div class="shop-cart">
+        <a href="/menu">Menu</a>
+        <h1>Shopping Cart</h1>
+        </div>
+    <div class="wrapper">
+        <div class="project">
+            <div class="shop" id="cart-items">
+                <!-- Cart items will be rendered here dynamically -->
+            </div>
+            <div class="right-bar">
+				{% if session.get('user') %}
+				<a href="/signin" class="navborder">HI {{ session['user']['name']}}</a>
+			    {% endif %}
+                <p><span>Subtotal</span> <span id="subtotal">₹0</span></p>
+                <hr>
+                <p><span>Tax (5%)</span> <span id="tax">₹0</span></p>
+                <hr>
+                <p><span>Shipping</span> <span id="shipping">₹0</span></p>
+                <hr>
+                <p><span>Total</span> <span id="total">₹0</span></p>
+                <!-- Check if 'user' attribute is present in session before accessing it -->
+                <a href="#" id="buy_now_btn" onclick="checkout()"><i class="fa fa-shopping-cart"></i>Checkout</a>
+            </div>
+        </div>
+    </div>
+	<script src="https://js.stripe.com/v3/"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+	<script src="/static/js/menu.js"></script>
+	<script src="{{ url_for('static', filename='script-ajax.js') }}"></script>
+</body>
+</html>
